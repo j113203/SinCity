@@ -4,7 +4,11 @@ import org.bukkit.entity.Player;
 
 public interface PlayerEvent {
 	public default void handler(org.bukkit.event.player.PlayerEvent $){
-		handler($,$.getPlayer());
+		if ($==null){
+			handler($,null);
+		}else{
+			handler($,$.getPlayer());
+		}		
 		Runtime.getRuntime().gc();
 	};
 	public void handler(org.bukkit.event.player.PlayerEvent $,Player $$);

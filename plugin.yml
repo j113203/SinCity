@@ -1,0 +1,3 @@
+name: SinCity
+main: j1Lib.sincity.echo.v1.launcher
+version: 0.1

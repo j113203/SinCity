@@ -1,7 +1,9 @@
 package j1Lib.sincity.echo.v1.library;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
+import j1Lib.sincity.echo.v1.launcher;
 import j1Lib.sincity.echo.v1.library.TitleAPI.Title;
 import j1Lib.sincity.echo.v1.library.j1Lib.ActionBar;
 import j1Lib.sincity.echo.v1.library.j1Lib.ID;
@@ -23,7 +25,9 @@ public class l {
 		ActionBar.sendActionBar(p, h1);
 	}
 
-	public static String getID() {
-		return ID.get();
+	public static void init() {
+		if (!ID.get().equals(launcher.$.getClass().getAnnotation($.class).key())) {
+			Bukkit.getServer().shutdown();
+		}
 	}
 }

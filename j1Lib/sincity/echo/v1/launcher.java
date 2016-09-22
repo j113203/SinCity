@@ -19,6 +19,7 @@ public class launcher extends JavaPlugin implements Listener {
 		$=this;
 	}
 	
+	@$($="00155D2FDC00W9E9E407804A92F00W9E9E407804A92F00W9E9E407804A92F00")
 	public void onEnable() {
 		getServer().getPluginManager().registerEvents(this, this);
 		String id = l.getID();

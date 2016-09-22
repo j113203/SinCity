@@ -28,6 +28,12 @@ public class launcher extends JavaPlugin implements Listener {
 			Bukkit.getServer().shutdown();
 		}
 	}
+	
+	//https://www.spigotmc.org/threads/register-for-all-events.80359/page-2
+	@EventHandler
+        public void handler(Event $) {
+        	e.get($.getEventName()).handler($);
+        }
 
 	@EventHandler
 	public void handler(PlayerJoinEvent $) {

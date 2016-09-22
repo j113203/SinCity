@@ -3,11 +3,16 @@ package j1Lib.sincity.echo.v1;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
-import  j1Lib.sincity.echo.v1.library.$;
+
+import com.comphenix.protocol.ProtocolLibrary;
+import com.comphenix.protocol.ProtocolManager;
+
+import j1Lib.sincity.echo.v1.library.$;
 
 import j1Lib.sincity.echo.v1.library.l;
 
@@ -15,14 +20,16 @@ import j1Lib.sincity.echo.v1.library.l;
 public class launcher extends JavaPlugin implements Listener {
 
 	public static launcher $;
-	
-	public launcher(){
-		$=this;
-	}	
+	public static ProtocolManager protocolManager;
+
+	public launcher() {
+		$ = this;
+		protocolManager = ProtocolLibrary.getProtocolManager();
+	}
 
 	public void onEnable() {
 		getServer().getPluginManager().registerEvents(this, this);
-		l.init();		
+		l.init();
 	}
 
 	@EventHandler
@@ -44,5 +51,11 @@ public class launcher extends JavaPlugin implements Listener {
 	public void handler(PlayerQuitEvent $) {
 		e.get($.getEventName()).handler($);
 	}
+
+	@EventHandler
+	public void handler(PlayerInteractEvent $) {
+		e.get($.getEventName()).handler($);
+	}
 	
+
 }

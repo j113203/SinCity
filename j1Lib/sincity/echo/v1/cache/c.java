@@ -21,6 +21,9 @@ public class c {
 		c.$.put($, $$);
 		return $$;
 	}
+	public static boolean has(String $){
+		return c.$.containsKey($);
+	}
 	@SuppressWarnings("unchecked")
 	private static Map<String,Object> getC(Player p){
 		return (Map<String, Object>) c.get(p.getUniqueId().toString(),new HashMap<String,Object>());

@@ -13,7 +13,7 @@ public class PlayerQuitEvent implements PlayerEvent{
 		org.bukkit.event.player.PlayerQuitEvent e = (org.bukkit.event.player.PlayerQuitEvent) $;
 		e.setQuitMessage(null);
 		Bukkit.getScheduler().cancelTask((int) c.get(p, "autoKick"));
-		Bukkit.getScheduler().cancelTask((int) c.get(p, "demo"));		
+		//Bukkit.getScheduler().cancelTask((int) c.get(p, "demo"));		
 	}
 	
 }
